@@ -23,8 +23,8 @@ print("Greeting", name, "I believe that you are", age, "years old") #print out v
 if age >= 18:
     print("You are old enough to begin your adventure")
 
-##elif age >= 14:
-   ## print("You can play with supervision")
+elif age <= 14:
+    print("You can play with supervision")
 
     heath = 10
     mana = 10 
@@ -42,14 +42,24 @@ if age >= 18:
             if claim_or_continue == "climb":
                 fight_or_run = input("You have encountered a pack of wolves. Fight or Run (fight/run)? ")
 
+                if fight_or_run == "fight":
+                    heath -= 5
+                    print("you have lost 5 health, your current health is", heath)
+
+                
             else:
-                print ("As you continue to walk a rock fell on your head...")
+                 print ("As you continue to walk you fell into a trap full of snakes...Try again.")
 
         elif left_or_right == "right": 
-            swim_or_continue = input("You follow the path and reach a lake... Do you want to swim or continue on your path? (swim/continue)? ")
-            
-            print("You got bitten by a water snake and lost 1 heath", heath, "your current heath is", heath)
+            swim_or_continue = input("You follow the path and reach a lake... Do you want to swim or continue on your path (swim/continue)? ")
 
+            if swim_or_continue == "swim":
+
+                heath -= 1
+                print("You got bitten by a water snake and lost 1 heath your current heath is", heath)
+
+            else:
+                fightbear_or_run = input("As you continue on your path you encounter a bear... Do you want to fight or run (fight/run)? ")            
             
     else:
         print("I'll be here if you change your mind")
